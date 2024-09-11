@@ -16,7 +16,7 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/attaswift/BigInt.git", from: "5.2.0"),
         .package(url: "https://github.com/mxcl/PromiseKit.git", from: "6.15.3"),
-        .package(url: "https://github.com/daltoniam/Starscream.git", from: "4.0.4"),
+        .package(url: "https://github.com/amirhossein7/Starscream.git", from: "4.0.4"),
         .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", from: "1.4.0"),
     ],
     targets: [
