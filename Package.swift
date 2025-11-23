@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "Web3swift",
     platforms: [
-        .macOS(.v10_12), .iOS(.v11),
+        .macOS(.v10_12), .iOS(.v14),
     ],
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
