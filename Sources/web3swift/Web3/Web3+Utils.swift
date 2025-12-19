@@ -6111,8 +6111,8 @@ extension Web3.Utils {
     /// Input parameters should be Data objects.
     static public func personalECRecover(_ personalMessage: Data, signature: Data) -> EthereumAddress? {
         if signature.count != 65 { return nil}
-        let rData = signature[0..<32].bytes
-        let sData = signature[32..<64].bytes
+        let rData = Array(signature[0..<32])
+        let sData = Array(signature[32..<64])
         var vData = signature[64]
         if vData >= 27 && vData <= 30 {
             vData -= 27
@@ -6135,8 +6135,8 @@ extension Web3.Utils {
     /// Input parameters should be Data objects.
     static public func hashECRecover(hash: Data, signature: Data) -> EthereumAddress? {
         if signature.count != 65 { return nil}
-        let rData = signature[0..<32].bytes
-        let sData = signature[32..<64].bytes
+        let rData = Array(signature[0..<32])
+        let sData = Array(signature[32..<64])
         var vData = signature[64]
         if vData >= 27 && vData <= 30 {
             vData -= 27
@@ -6171,7 +6171,7 @@ extension Web3.Utils {
     /// Unmarshals a 65 byte recoverable EC signature into internal structure.
     static func unmarshalSignature(signatureData:Data) -> SECP256K1.UnmarshaledSignature? {
         if (signatureData.count != 65) {return nil}
-        let bytes = signatureData.bytes
+        let bytes = Array(signatureData)
         let r = Array(bytes[0..<32])
         let s = Array(bytes[32..<64])
         return SECP256K1.UnmarshaledSignature(v: bytes[64], r: Data(r), s: Data(s))
